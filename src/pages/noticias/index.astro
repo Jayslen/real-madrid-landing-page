@@ -1,0 +1,31 @@
+---
+import AllNewsLayout from '../../layouts/NeswPreviewsLayout.astro'
+import BlogPost from '../../components/BlogPost.astro'
+const allPost = await Astro.glob('./*.md')
+const mappedPosts = allPost.map((value) => {
+  return {
+    title: value.frontmatter.title,
+    image: value.frontmatter.image.url,
+    imageDescription: value.frontmatter.image.alt,
+    url: value.url,
+    tags: value.frontmatter.tags,
+  }
+})
+---
+
+<AllNewsLayout
+  pageTitle="Real Madrid - Noticias"
+  title="Todas las noticias del Real Madrid Futbol Club"
+>
+  {
+    mappedPosts.map(({ title, image, imageDescription, url }) => (
+      <BlogPost
+        class="h-72"
+        title={title}
+        image={image}
+        imageDescription={imageDescription}
+        linkTo={url}
+      />
+    ))
+  }
+</AllNewsLayout>

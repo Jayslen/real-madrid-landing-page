@@ -1,0 +1,82 @@
+---
+import RealMadridLogo from './RealMadridLogo.astro'
+import MenuIcon from './MenuIcon.astro'
+---
+
+<header
+  id="header"
+  class="py-4 px-8 border-b-[1px] flex justify-between w-full sticky top-0 bg-gray-50 shadow-lg transition-all duration-1000 delay-300"
+>
+  <div class="flex items-center gap-2 border-r-[1px] w-24">
+    <MenuIcon class="w-10 h-8 hover:fill-[#6b4ef7] cursor-pointer" />
+    <a href="/">
+      <RealMadridLogo
+        class="w-10 h-9 hover:fill-[#6b4ef7] cursor-pointer mb-1"
+      />
+    </a>
+  </div>
+  <nav class="flex items-center gap-4">
+    <a href="/noticias">Noticias</a>
+    <a href="#">Madridistas</a>
+    <a href="#">Entradas</a>
+    <a href="#">Area VIP</a>
+    <a href="#">Tour</a>
+    <a href="#">Tiendar</a>
+  </nav>
+</header>
+
+<aside
+  class="w-[40vw] h-screen absolute top-0 left-0 -z-40 bg-red-400 aside--hidden"
+>
+</aside>
+
+<style>
+  a {
+    letter-spacing: 0.3px;
+    color: gray;
+    font-size: 0.85rem;
+    font-family: 'Poppins', 'sans-serif';
+    cursor: pointer;
+    transition: 300ms color;
+  }
+
+  a:hover {
+    color: #6b4ef7;
+  }
+
+  .aside--active,
+  .aside--hidden {
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+
+  .aside--hidden {
+    animation-name: hidden;
+    display: none;
+  }
+  .aside--active {
+    animation-name: show;
+    display: block;
+  }
+
+  @keyframes show {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes hidden {
+    from {
+      display: block;
+    }
+    to {
+      transform: translateX(-100%);
+      display: none;
+    }
+  }
+</style>
+
+<script src="../scripts/menu"></script>
+<script src="../scripts/hideHeaderOnScroll"></script>

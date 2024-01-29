@@ -1,0 +1,27 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: white;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+h1 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+p,
+span {
+  font-family: 'Chillax', sans-serif;
+  font-weight: 500;
+}
+

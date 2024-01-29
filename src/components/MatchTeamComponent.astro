@@ -1,0 +1,9 @@
+---
+const { logo, name, result } = Astro.props
+---
+
+<div class={`flex items-center gap-4 text-[#0f2145] ${Astro.props.class}`}>
+  <span class="font-Poppins text-xl">{name}</span>
+  <img src={logo} alt={`${name} logo`} class="w-12" />
+  <span class="font-Poppins font-bold text-6xl">{result}</span>
+</div>

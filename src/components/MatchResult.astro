@@ -1,0 +1,45 @@
+---
+import MatchTeamComponent from './MatchTeamComponent.astro'
+
+const REAL_MADRID_DATA = {
+  logo: '/logo.webp',
+  name: 'Real Madrid',
+}
+const {
+  matchData: {
+    result,
+    status,
+    rival: { logo: rivalLogo, name: rivalName },
+  },
+} = Astro.props
+---
+
+<article
+  class="bg-[#f3f5f8] flex justify-around items-center rounded-xl px-6 py-4"
+>
+  <MatchTeamComponent
+    logo={REAL_MADRID_DATA.logo}
+    name={REAL_MADRID_DATA.name}
+    result={result[0]}
+  />
+  <span
+    class={` px-4 py-2 rounded-md capitalize font-bold text-xs ${
+      status === 'victoria'
+        ? 'bg-green-200'
+        : status === 'derrota'
+          ? 'bg-red-200'
+          : 'bg-gray-400'
+    }`}>{status}</span
+  >
+  <!-- <div class={`flex items-center gap-4 text-[#0f2145] ${Astro.props.class}`}>
+    <span class="font-Poppins font-bold text-6xl">{result[1]}</span>
+    <img src={rivalLogo} alt={`logo`} class="w-12" />
+    <span class="font-Poppins text-xl">{rivalName}</span>
+  </div> -->
+  <MatchTeamComponent
+    class="flex-row-reverse"
+    logo={rivalLogo}
+    name={rivalName}
+    result={result[1]}
+  />
+</article>

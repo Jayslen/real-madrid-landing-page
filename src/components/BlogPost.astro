@@ -1,0 +1,47 @@
+---
+const {
+  image,
+  title,
+  linkTo = '#',
+  imageDescription,
+  backdrop = false,
+} = Astro.props
+---
+
+<a
+  href={linkTo}
+  class=`flex items-end rounded-xl relative overflow-hidden group ${Astro.props.class}`
+>
+  <img
+    src={image}
+    alt={imageDescription}
+    class="w-full h-full object-cover object-top absolute -z-10 transition-transform duration-500 group-hover:scale-125"
+  />
+  <h3 class="text-xl z-10 text-white m-3">
+    {title}
+  </h3>
+  <div
+    class=`${backdrop ? 'w-full h-full absolute backdrop-blur-sm ' : 'gradient'}`
+  >
+  </div>
+</a>
+<style>
+  .gradient {
+    background: linear-gradient(
+      180deg,
+      rgba(51, 170, 255, 0) 0%,
+      rgb(0, 0, 0) 100%
+    );
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+  }
+  h3 {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+</style>

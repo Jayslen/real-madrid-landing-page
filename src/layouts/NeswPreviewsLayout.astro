@@ -1,0 +1,53 @@
+---
+import BaseLayout from './BaseLayout.astro'
+const allPost = await Astro.glob('../pages/noticias/*.md')
+const tags = [...new Set(allPost.map((value) => value.frontmatter.tags).flat())]
+const { pathname } = Astro.url
+const [_, pathNameTag] = pathname.replace('/', '').split('/')
+const { pageTitle, title } = Astro.props
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <main class="lg:mx-12 2xl:mx-52 my-5">
+    <h1 class="text-8xl my-5 text-[#0f2145]">
+      {title}
+    </h1>
+    <nav class="my-7 flex gap-1.5 text-white">
+      <a
+        href="/noticias"
+        class={`rounded-full px-4 py-2 capitalize transition-all hover:bg-[#4a4080]  ${
+          !pathNameTag ? 'bg-[#806bec] glow' : 'bg-gray-500'
+        }`}>Todas</a
+      >
+      {
+        tags.map((tag) => (
+          <a
+            href={`/noticias/${tag}`}
+            class={`rounded-full px-4 py-2 capitalize transition-all hover:bg-[#4a4080] ${
+              pathNameTag === tag ? 'bg-[#806bec] glow' : 'bg-gray-500'
+            }`}
+          >
+            {tag}
+          </a>
+        ))
+      }
+    </nav>
+    <section
+      class="grid grid-cols-[repeat(auto-fit,minmax(290px,1fr))] grid-flow-row gap-4 w-[100%]"
+    >
+      <slot />
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  a {
+    font-family: 'Chillax', sans-serif;
+  }
+
+  .glow {
+    -webkit-box-shadow: 0px 0px 45px 6px rgba(129, 107, 236, 1);
+    -moz-box-shadow: 0px 0px 45px 6px rgba(129, 107, 236, 1);
+    box-shadow: 0px 0px 45px 6px rgba(129, 107, 236, 1);
+  }
+</style>

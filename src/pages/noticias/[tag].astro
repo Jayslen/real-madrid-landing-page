@@ -1,0 +1,53 @@
+---
+import BlogPost from '../../components/BlogPost.astro'
+import AllNewsLayout from '../../layouts/NeswPreviewsLayout.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+export async function getStaticPaths() {
+  const allPost = await Astro.glob('../noticias/*.md')
+  const uniqueTags = [
+    ...new Set(allPost.map((value) => value.frontmatter.tags).flat()),
+  ]
+
+  return uniqueTags.map((tag) => {
+    const filterPosts = allPost
+      .filter((value) => value.frontmatter.tags.includes(tag))
+      .sort((a, b) => {
+        const dateA: any = new Date(a.frontmatter.pubDate)
+        const dateB: any = new Date(b.frontmatter.pubDate)
+        return dateB - dateA
+      })
+    return {
+      params: { tag },
+      props: { posts: filterPosts },
+    }
+  })
+}
+const { tag } = Astro.params
+const { posts } = Astro.props
+---
+
+<AllNewsLayout
+  title={`Noticias Relacionadas con ${tag}`}
+  pageTitle={`Real Madrid - ${tag}`}
+>
+  {
+    posts.map(
+      ({
+        url,
+        frontmatter: {
+          title,
+          image: { url: img, alt },
+        },
+      }) => (
+        <BlogPost
+          image={img}
+          imageDescription={alt}
+          title={title}
+          linkTo={url}
+          class="h-72"
+        />
+      )
+    )
+  }
+</AllNewsLayout>

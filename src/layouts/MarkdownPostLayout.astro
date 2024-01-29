@@ -1,0 +1,78 @@
+---
+import MatchResult from '../components/MatchResult.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const {
+  frontmatter: {
+    title,
+    description,
+    pubDate,
+    pageTitle,
+    image: { url, alt },
+    match,
+  },
+} = Astro.props
+
+const date = new Date(pubDate).toLocaleDateString('es-ES', {
+  weekday: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+})
+---
+
+<BaseLayout pageTitle={`Real Madrid - ${pageTitle}`}>
+  <main class="lg:mx-40 2xl:mx-[30%]">
+    <h1 class="text-5xl leading-tight font-bold text-[#0f2145]">
+      {title}
+    </h1>
+    {match && <MatchResult matchData={match} />}
+    <h2 class="text-2xl my-4 font-medium text-[#29395a]">{description}</h2>
+    <div class="flex flex-col gap-3">
+      <img class="rounded-2xl" src={url} alt={alt} />
+      <span class="font-bold font-Poppins text-sm capitalize text-gray-600"
+        >{date}</span
+      >
+    </div>
+    <section>
+      <slot />
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    h1,
+    p {
+      margin: 1rem 0;
+    }
+
+    h3,
+    p {
+      font-size: 1.2rem;
+      color: #29395a;
+    }
+    p {
+      line-height: 1.7;
+    }
+
+    h3 ~ blockquote > p,
+    h3 ~ p {
+      margin: 0rem;
+      margin-bottom: 1rem;
+    }
+
+    blockquote > p::after,
+    blockquote > p::before {
+      /* content: "'"; */
+      font-weight: bold;
+    }
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+    a:visited {
+      color: purple;
+    }
+  }
+</style>
