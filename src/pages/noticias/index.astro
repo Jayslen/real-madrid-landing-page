@@ -2,15 +2,18 @@
 import AllNewsLayout from '../../layouts/NeswPreviewsLayout.astro'
 import BlogPost from '../../components/BlogPost.astro'
 const allPost = await Astro.glob('./*.md')
-const mappedPosts = allPost.map((value) => {
-  return {
-    title: value.frontmatter.title,
-    image: value.frontmatter.image.url,
-    imageDescription: value.frontmatter.image.alt,
-    url: value.url,
-    tags: value.frontmatter.tags,
-  }
-})
+const mappedPosts = allPost
+  .map((value) => {
+    return {
+      title: value.frontmatter.title,
+      image: value.frontmatter.image.url,
+      imageDescription: value.frontmatter.image.alt,
+      url: value.url,
+      tags: value.frontmatter.tags,
+      date: new Date(value.frontmatter.pubDate),
+    }
+  })
+  .sort((a: any, b: any) => b.date - a.date)
 ---
 
 <AllNewsLayout
