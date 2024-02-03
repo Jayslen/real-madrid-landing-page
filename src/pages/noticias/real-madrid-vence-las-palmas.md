@@ -10,11 +10,27 @@ image:
     alt: 'Jude Bellingham, Vinicius Jr y tchuoameni celebrando un gol en el partido contra las plamas.'
 match: 
     rival: {
-        logo: 'https://assets.stickpng.com/thumbs/584ad225b519ea740933a8af.png',
+        logo: 'https://upload.wikimedia.org/wikipedia/tr/f/fc/UD-Las-Palmas.png',
         name: 'Las Palmas'
     }
     result: [2,1]
     status: 'victoria'
+gallery: [
+    {image: '/src/assets/palmas-real-madrid-images/1.webp', alt: 'Vini, Rudiger y thcuameni celebrando un gol'},
+    {image: '/src/assets/palmas-real-madrid-images/2.webp', alt: 'Vini Jr. celebrando un gol haciendo el gesto yo estoy aqui'},
+    {image: '/src/assets/palmas-real-madrid-images/3.webp', alt: 'Todo el equipo celebrando un gol, abrazandose y sonriendo'},
+    {image: '/src/assets/palmas-real-madrid-images/4.webp', alt: 'Tchouameni celebrando su gol de cabeza señalando al cielo'},
+    {image: '/src/assets/palmas-real-madrid-images/5.webp', alt: 'El once inicial del Real Madrid en el partido contra las palmas'},
+    {image: '/src/assets/palmas-real-madrid-images/6.webp', alt: 'Las palmas y el Real Madrid en el estadio minutos antes de iniciar el partido'},
+    {image: '/src/assets/palmas-real-madrid-images/7.webp', alt: 'Rodrygo regateando a un jugador de las palmas en el partido de liga'},
+    {image: '/src/assets/palmas-real-madrid-images/8.webp', alt: 'Dani Ceballos en el partido contra las palmas'},
+    {image: '/src/assets/palmas-real-madrid-images/9.webp', alt: 'Camavinga en el partido contra las palmas, en un duelo con un jugador de las palmas'}, 
+    {image: '/src/assets/palmas-real-madrid-images/10.webp', alt: 'Dani Ceballos en el partido contra las palmas, en un duelo con un jugador de las palmas'},
+    {image: '/src/assets/palmas-real-madrid-images/11.webp', alt: 'Brahim Diaz en el partido contra las palmas, en medio de dos jugadores de las palmas'},
+    {image: '/src/assets/palmas-real-madrid-images/12.webp', alt: 'Tchouameni dando un cabezazo para marcar un gol en el partido contra las palmas'},
+    
+
+]
 ---
 
 El Real Madrid no cede terreno en la Liga, donde encadena 15 partidos sin conocer la derrota (12 victorias), y sumó los tres puntos en su visita al estadio Gran Canaria. Para lograrlo, nuestro equipo tuvo que dar la vuelta al gol con el que Javi Muñoz adelantó a la UD Las Palmas en el 47’. Vini Jr., con un zurdazo cruzado en el 65’, y Tchouameni, de cabeza tras un córner sacado por Kroos en el 84’, sellaron otra remontada de los de Ancelotti.
