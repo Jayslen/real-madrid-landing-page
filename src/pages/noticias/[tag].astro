@@ -1,7 +1,6 @@
 ---
 import BlogPost from '../../components/BlogPost.astro'
 import AllNewsLayout from '../../layouts/NeswPreviewsLayout.astro'
-import BaseLayout from '../../layouts/BaseLayout.astro'
 
 export async function getStaticPaths() {
   const allPost = await Astro.glob('../noticias/*.md')

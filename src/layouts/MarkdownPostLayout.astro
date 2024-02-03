@@ -1,6 +1,7 @@
 ---
 import MatchResult from '../components/MatchResult.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { Gallery } from '../components/Gallery'
 
 const {
   frontmatter: {
@@ -10,6 +11,7 @@ const {
     pageTitle,
     image: { url, alt },
     match,
+    gallery,
   },
 } = Astro.props
 
@@ -27,7 +29,7 @@ const date = new Date(pubDate).toLocaleDateString('es-ES', {
       {title}
     </h1>
     {match && <MatchResult matchData={match} />}
-    <h2 class="text-2xl my-4 font-medium text-[#29395a]">{description}</h2>
+    <h2 class="text-3xl my-4 font-medium text-[#29395a]">{description}</h2>
     <div class="flex flex-col gap-3">
       <img class="rounded-2xl" src={url} alt={alt} />
       <span class="font-bold font-Poppins text-sm capitalize text-gray-600"
@@ -36,6 +38,7 @@ const date = new Date(pubDate).toLocaleDateString('es-ES', {
     </div>
     <section>
       <slot />
+      {gallery && <Gallery images={gallery} client:load />}
     </section>
   </main>
 </BaseLayout>
