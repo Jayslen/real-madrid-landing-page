@@ -16,18 +16,18 @@ match:
     result: [2,1]
     status: 'victoria'
 gallery: [
-    {image: '/src/assets/palmas-real-madrid-images/1.webp', alt: 'Vini, Rudiger y thcuameni celebrando un gol'},
-    {image: '/src/assets/palmas-real-madrid-images/2.webp', alt: 'Vini Jr. celebrando un gol haciendo el gesto yo estoy aqui'},
-    {image: '/src/assets/palmas-real-madrid-images/3.webp', alt: 'Todo el equipo celebrando un gol, abrazandose y sonriendo'},
-    {image: '/src/assets/palmas-real-madrid-images/4.webp', alt: 'Tchouameni celebrando su gol de cabeza señalando al cielo'},
-    {image: '/src/assets/palmas-real-madrid-images/5.webp', alt: 'El once inicial del Real Madrid en el partido contra las palmas'},
-    {image: '/src/assets/palmas-real-madrid-images/6.webp', alt: 'Las palmas y el Real Madrid en el estadio minutos antes de iniciar el partido'},
-    {image: '/src/assets/palmas-real-madrid-images/7.webp', alt: 'Rodrygo regateando a un jugador de las palmas en el partido de liga'},
-    {image: '/src/assets/palmas-real-madrid-images/8.webp', alt: 'Dani Ceballos en el partido contra las palmas'},
-    {image: '/src/assets/palmas-real-madrid-images/9.webp', alt: 'Camavinga en el partido contra las palmas, en un duelo con un jugador de las palmas'}, 
-    {image: '/src/assets/palmas-real-madrid-images/10.webp', alt: 'Dani Ceballos en el partido contra las palmas, en un duelo con un jugador de las palmas'},
-    {image: '/src/assets/palmas-real-madrid-images/11.webp', alt: 'Brahim Diaz en el partido contra las palmas, en medio de dos jugadores de las palmas'},
-    {image: '/src/assets/palmas-real-madrid-images/12.webp', alt: 'Tchouameni dando un cabezazo para marcar un gol en el partido contra las palmas'},
+    {image: '/palmas-real-madrid-images/1.webp', alt: 'Vini, Rudiger y thcuameni celebrando un gol'},
+    {image: '/palmas-real-madrid-images/2.webp', alt: 'Vini Jr. celebrando un gol haciendo el gesto yo estoy aqui'},
+    {image: '/palmas-real-madrid-images/3.webp', alt: 'Todo el equipo celebrando un gol, abrazandose y sonriendo'},
+    {image: '/palmas-real-madrid-images/4.webp', alt: 'Tchouameni celebrando su gol de cabeza señalando al cielo'},
+    {image: '/palmas-real-madrid-images/5.webp', alt: 'El once inicial del Real Madrid en el partido contra las palmas'},
+    {image: '/palmas-real-madrid-images/6.webp', alt: 'Las palmas y el Real Madrid en el estadio minutos antes de iniciar el partido'},
+    {image: '/palmas-real-madrid-images/7.webp', alt: 'Rodrygo regateando a un jugador de las palmas en el partido de liga'},
+    {image: '/palmas-real-madrid-images/8.webp', alt: 'Dani Ceballos en el partido contra las palmas'},
+    {image: '/palmas-real-madrid-images/9.webp', alt: 'Camavinga en el partido contra las palmas, en un duelo con un jugador de las palmas'}, 
+    {image: '/palmas-real-madrid-images/10.webp', alt: 'Dani Ceballos en el partido contra las palmas, en un duelo con un jugador de las palmas'},
+    {image: '/palmas-real-madrid-images/11.webp', alt: 'Brahim Diaz en el partido contra las palmas, en medio de dos jugadores de las palmas'},
+    {image: '/palmas-real-madrid-images/12.webp', alt: 'Tchouameni dando un cabezazo para marcar un gol en el partido contra las palmas'},
     
 
 ]
