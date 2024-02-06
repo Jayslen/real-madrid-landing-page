@@ -6,7 +6,7 @@ description: 'El Real Madrid se consagra campeon de la Supercopa Española 2024 
 pubDate: 2024-01-14
 tags: ['partidos', 'trofeos']
 image:
-    url: '/campeones.jpeg'
+    url: '/campeones.webp'
     alt: 'Equipo del real madrid celebrado el titulo de la supercopa de españa.'
 match: 
     rival: {
