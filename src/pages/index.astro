@@ -16,7 +16,16 @@ const POSTS = SORTED_POST.filter(({ frontmatter: { main } }) => !main).slice(
 
 <BaseLayout pageTitle="Real Madrid - Futbol Club">
   <main class="lg:mx-12 2xl:mx-52">
-    <h1 class="text-center lg:text-[9.5rem] 2xl:text-[210px]">Real Madrid</h1>
+    <div
+      id="background-image"
+      class="absolute top-0 right-0 -z-10 h-[100vh] w-screen"
+    >
+    </div>
+    <h1
+      class="text-left lg:text-[9.5rem] 2xl:text-[210px] bg-gradient-to-r text-white relative"
+    >
+      Real Madrid
+    </h1>
     <section class="w-full h-[80vh] grid grid-cols-[0.45fr,0.55fr] gap-3 mb-10">
       <BlogPost
         class="[&>h3]:text-4xl"
@@ -55,7 +64,25 @@ const POSTS = SORTED_POST.filter(({ frontmatter: { main } }) => !main).slice(
     </section>
   </main>
 </BaseLayout>
-<style is:global>
+<style>
+  #background-image {
+    -webkit-mask-image: linear-gradient(to top, transparent 25%, black 75%);
+    mask-image: linear-gradient(to top, transparent 25%, black 75%);
+    background-image: url('/stadium.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  h1::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    transform: translateY(-60%);
+    background-image: url('/logo.webp');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
   section {
     #bento {
       & :nth-child(1) {
