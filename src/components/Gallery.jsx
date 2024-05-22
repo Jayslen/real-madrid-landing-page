@@ -7,6 +7,9 @@ import { CloseIcon } from './CloseIcon'
 
 export function Gallery({ images = [] }) {
   const [selectedImage, setSelectedImage] = useState(0)
+  const paginate = (newDirection) => {
+    setPage([page + newDirection, newDirection]);
+  };
 
   const previousImage = () => {
     if (selectedImage === 1) return
